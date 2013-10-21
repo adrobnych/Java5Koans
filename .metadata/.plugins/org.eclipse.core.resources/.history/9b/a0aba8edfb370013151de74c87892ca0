@@ -1,0 +1,35 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+
+class EnumModel{
+
+	public static final EnumModel White = new EnumModel("#FFFFFF");
+	public static final EnumModel Black = new EnumModel("#000000");
+	
+	// What is the name of OOD pattern built on top of private constructor?
+	private EnumModel(String _stringColorRepresentation) {
+		stringColorRepresentation = _stringColorRepresentation;
+	}
+	
+	private String stringColorRepresentation;
+	
+	public String toString(){
+		return stringColorRepresentation;
+	}
+	
+}
+
+public class AboutIdiomaticEnums {
+	
+	
+	@Test
+	public void internaly_Enums_use_public_static_final_fields_and_private_constructor() {
+		assertEquals(___, EnumModel.White.toString());
+	}
+
+}

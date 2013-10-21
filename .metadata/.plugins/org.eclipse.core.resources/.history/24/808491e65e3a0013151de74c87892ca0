@@ -1,0 +1,70 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.assertEquals;
+
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+public class AboutIdiomaticUseEnumsInsteadOfIntConstants {
+
+	// Self-overriding: Enum type with constant-specific method implementations
+	public enum Operation {
+		PLUS { double apply(double x, double y){return x + y;} },
+		MINUS { double apply(double x, double y){return x - y;} },
+		TIMES { double apply(double x, double y){return x * y;} },
+		DIVIDE { double apply(double x, double y){return x / y;} };
+		
+		abstract double apply(double x, double y);
+	}
+	
+	@Test
+	public void a_____self_overriding() {
+		assertEquals(___, Operation.PLUS.apply(2, 3));
+		assertEquals(___, Operation.TIMES.apply(2, 3));
+	}
+	
+	// Self-overriding: Enum type with constant-specific class bodies and data
+	public enum ExtendedOperation {
+		PLUS("+") {
+			double apply(double x, double y) { return x + y; }
+		},
+		MINUS("-") {
+			double apply(double x, double y) { return x - y; }
+		},
+		TIMES("*") {
+			double apply(double x, double y) { return x * y; }
+		},
+		DIVIDE("/") {
+			double apply(double x, double y) { return x / y; }
+		};
+		
+		private final String symbol;
+		
+		ExtendedOperation(String symbol) { this.symbol = symbol; }
+		
+		@Override public String toString() { return symbol; }
+		
+		abstract double apply(double x, double y);
+	}
+	
+	@Test
+	public void b_____custom_behavior_and_data() {
+		double x = 2;
+		double y = 4;
+		String result = "";
+		for (ExtendedOperation op : ExtendedOperation.values())
+			result += String.format("%f %s %f = %f%n",
+					x, op, y, op.apply(x, y));
+		assertEquals("resulting string is: \n" + result, ___, result.length());
+	}
+	
+	@Test
+	public void c_____Enum_types_have_an_automatically_generated_valueOf_String_method() {
+		Operation op = Operation.valueOf("PLUS");
+		assertEquals(___, op);
+	}
+	
+	
+
+}

@@ -1,0 +1,60 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+public class AboutEnumsBasics {
+
+	enum Colors {
+		Red, Blue, Green, Yellow // what happens if you add a ; here?
+		// What happens if you type Red() instead?
+	}
+	
+	@Test
+	public void basicEnums() {
+		Colors blue = Colors.Blue;
+		assertTrue(blue == Colors.Blue);
+		assertTrue(blue == Colors.Red);
+		assertTrue(blue instanceof Colors);
+	}
+	
+	@Test
+	public void basicEnumsAccess() {
+		Colors[] colorArray = Colors.values();
+		assertEquals(___, colorArray[2]);
+	}
+	
+	enum SkatSuits {
+		Clubs(12), Spades(11), Hearts(10), Diamonds(9);
+		SkatSuits(int v) { value = v; }
+		private int value;
+	}
+	
+	@Test
+	public void enumsWithAttributes() {
+		// value is private but we still can access it. Why?
+		// Try moving the enum outside the AboutEnum class... What do you expect?
+		// What happens?
+		assertEquals(___, SkatSuits.Clubs.value > SkatSuits.Spades.value);
+	}
+	
+	enum OpticalMedia {
+		CD(650), DVD(4300), BluRay(50000);
+		OpticalMedia(int c) {
+			capacityInMegaBytes = c;
+		}
+		int capacityInMegaBytes;
+		int getCoolnessFactor() {
+			return (capacityInMegaBytes - 1000) * 10;
+		}
+	}
+	
+	@Test
+	public void enumsWithMethods() {
+		assertEquals(___, OpticalMedia.CD.getCoolnessFactor());
+		assertEquals(___,OpticalMedia.BluRay.getCoolnessFactor());
+	}
+
+}
