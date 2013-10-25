@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/2_AboutEnums/src/com/droidbrew/javakoans/eagkoans/E_AboutEnumSet.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value=""/>
+<booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value="a_____usnmne_enum_set_instead_of_bit_field"/>
+<stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.droidbrew.javakoans.eagkoans.E_AboutEnumSet"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="2_AboutEnums"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value=""/>
+</launchConfiguration>

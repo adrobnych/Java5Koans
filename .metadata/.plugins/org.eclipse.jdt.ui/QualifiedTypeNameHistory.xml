@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.droidbrew.javakoans.eagkoans.AboutIdiomaticEnums.BestDetectivesEver"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.droidbrew.javakoans.eagkoans.AboutIdiomaticUseEnumsInsteadOfIntConstants.AvtoPromBrand"/>
+<fullyQualifiedTypeName name="com.droidbrew.javakoans.eagkoans.AboutEnumVsClass.BestDetectivesEver"/>
+<fullyQualifiedTypeName name="com.droidbrew.javakoans.eagkoans.AboutIdiomaticUseEnumsInsteadOfIntConstants.PayrollDay"/>
+<fullyQualifiedTypeName name="com.droidbrew.javakoans.eagkoans.D_AountEnumAntipatterns.Ensemble"/>
+</qualifiedTypeNameHistroy>

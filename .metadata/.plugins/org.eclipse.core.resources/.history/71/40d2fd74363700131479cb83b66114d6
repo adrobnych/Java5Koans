@@ -1,6 +1,0 @@
-package com.droidbrew.javakoans.eagkoans.base;
-
-public class Koan {
-	public static String ___ = null;
-	public static Integer __ = null;
-}

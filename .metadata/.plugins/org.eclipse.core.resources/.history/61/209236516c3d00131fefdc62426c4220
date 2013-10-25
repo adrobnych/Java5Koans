@@ -1,0 +1,19 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+
+public class A_AboutAnnotationsBasics {
+
+	
+	
+	@Test
+	public void e_____Enum_constants_are_ordered() {
+		assertEquals(___, OpticalMedia.CD.ordinal());
+		assertEquals(___, OpticalMedia.BluRay.ordinal());
+	}
+
+}

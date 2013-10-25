@@ -1,0 +1,27 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+import org.junit.experimental.categories.Categories.ExcludeCategory;
+
+
+public class A_AboutAnnotationsBasics {
+
+	@interface RedMagnet{
+	}
+	
+	@RedMagnet
+	Object SomeData;
+	
+	@RedMagnet
+	@Test
+	@SuppressWarnings("unused")
+	public void a_____in_the_very_basics_annotation_is_just_a_metadata_marker() {
+		@RedMagnet Object SomeData;
+		assertEquals(___, RedMagnet.class);
+
+	}
+
+}
