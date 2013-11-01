@@ -1,0 +1,92 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+// imagine we're in place of client code using generic class 
+// and we want to work with many generic variations
+
+// library code
+
+interface Cartridge{
+	public String fill();
+}
+
+class BWCarteidge implements Cartridge{
+	@Override
+	public String fill() {
+		return "red ink filled; green ink filled; blue ink filled";
+	}
+}
+
+class ColorCartridge implements Cartridge{
+	@Override
+	public String fill() {
+		return "black ink filled";
+	}
+}
+
+class Printer<T extends Cartridge>{     // this is injection of variation
+	
+	private T cartridge;
+	
+	public T getCartridge(){
+		return cartridge;
+	}
+	
+	public String replaceCartridge(){    
+		try {
+			this.cartridge = carteidgeClass.newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		return "cartridge was replaced";
+	}
+	
+	public boolean isColorPrinter(){
+		return carteidgeClass == ColorCartridge.class;
+	}
+	
+	// T is erased in runtime, so we can't do things like T t = new T()
+	// so we need the trick for sending type T as a parameter using static factory:
+	
+	private Class<T> carteidgeClass;
+	
+	public static <U extends Cartridge> Printer<U> PrinterFactory(Class<U> clazz){
+		return new Printer<U>(clazz);
+	}
+	
+	protected Printer(Class<T> clazz){
+		this.carteidgeClass =  clazz;
+	}
+}
+
+// client code
+
+class OfficeSupport{
+	public String replaceOrFillCartridge(Printer<? extends Cartridge> printer, boolean cartridgeNeedsCange){
+		if(cartridgeNeedsCange)
+			return printer.replaceCartridge();
+		else
+			return printer.getCartridge().fill();
+	}
+}
+
+public class D_AboutGenericsWildcards {
+	@Test
+	public void a_____wildcards_allow_client_coding_around_existing_generics_with_variation(){
+		Printer<ColorCartridge> cPrinter = new Printer<>(ColorCartridge.class);
+		cPrinter.replaceCartridge();
+		assertEquals(___, new OfficeSupport().replaceOrFillCartridge(cPrinter, false)); // WAT? 
+		// try to change replaceOrFillCartridge(Printer<Cartridge> printer, ... to
+		//               replaceOrFillCartridge(Printer<? extends Cartridge> printer, ...
+	}
+}

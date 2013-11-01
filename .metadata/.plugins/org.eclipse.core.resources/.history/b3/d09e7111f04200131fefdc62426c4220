@@ -1,0 +1,19 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import java.lang.reflect.Method;
+import java.util.LinkedList;
+import java.util.List;
+
+class Reflector{
+	public static <T> List<String> getMethodNames(T investigatedObject){
+		List<String> result = new LinkedList<>();
+		for(Method m : investigatedObject.getClass().getMethods()){
+			result.add(m.getName());
+		}
+		return result;
+	}
+}
+
+public class B_AboutGenericMethods {
+	
+}

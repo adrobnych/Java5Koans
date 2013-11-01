@@ -1,0 +1,68 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+public class B_AboutGenericMethods {
+
+	class SmallHouse{
+		private Object visitor;  
+		public void enter(Object visitor){
+			this.visitor = visitor;
+		}
+		public Object exit(){
+			Object last_visitor = visitor;
+			visitor = null;
+			return last_visitor;
+		}
+	}
+	
+	class Human{}
+	
+	class Dog{}
+	
+	@Test
+	@SuppressWarnings("unused")
+	public void a_____think_about_situations_when_class_has_meaning_as_a_container_or_context_for_another_class(){
+		// actually we can do 3 things:
+		// - extend base class for all types of use: DogHouse, ManHouse, BirtdHouse etc.
+		// - try to work with Object and cast where possible
+		// - or use generics.
+		
+		// Here you can see 2nd option:
+		
+		// we can write dangerous code which blows up runtime
+		SmallHouse house = new SmallHouse();
+		house.enter(new Human());
+        Human who_was_in_house = (Human) house.exit();   // everything is OK so far
+        house.enter(new Dog());
+        who_was_in_house = (Human) house.exit();         // it compiles well! But blows up runtime...
+	}
+
+	class SmallHouseJava5Style<T>{   // what happen when we add " extends SmallHouse " here 
+		private T visitor;  
+		public void enter(T visitor){
+			this.visitor = visitor;
+		}
+		public T exit(){
+			T last_visitor = visitor;
+			visitor = null;
+			return last_visitor;
+		}
+	}
+	
+	@Test
+	@SuppressWarnings("unused")
+	public void b_____generics_allow_embedd_such_a_context_into_code(){
+		// we can write dangerous code which blows up runtime
+		SmallHouseJava5Style<Human> house = new SmallHouseJava5Style<>(); // look at "Diamond" for Java 7 
+		house.enter(new Human());
+        Human who_was_in_house = house.exit();   // no cast needed!
+        // house.enter(new Dog());               // also house defends himself from wrong visitors
+        who_was_in_house = house.exit();         
+        assertTrue("I've got basic meaning of Generics", false);
+	}
+
+}

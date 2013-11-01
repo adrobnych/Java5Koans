@@ -1,0 +1,26 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import org.junit.Test;
+
+@Retention(RetentionPolicy.RUNTIME)
+@interface MarkerAnnotation{}
+
+@MarkerAnnotation
+class SomeClass implements Runnable{
+	@Override
+	public void run() {}
+}
+
+public class E_AboutAnnotationIsNotAnInterface {
+
+	@Test
+	public void test() {
+		MarkerAnnotation baseRef1 = new SomeClass();
+	}
+
+}

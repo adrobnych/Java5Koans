@@ -1,0 +1,36 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+class Reflector{
+	public static <T> List<String> getMethodNames(T investigatedObject){
+		List<String> result = new LinkedList<>();
+		for(Method m : investigatedObject.getClass().getDeclaredMethods()){
+			result.add(m.getName());
+		}
+		return result;
+	}
+}
+
+class Animal{
+	public void eat(){}
+	public void makeAnotherAnimal(){}
+}
+
+public class B_AboutGenericMethods {
+	@Test
+	public void a_____we_can_allow_multytype_parameters_for_generic_method(){
+	//assertEquals(___, Reflector.getMethodNames(new Animal()));
+	assertEquals(___, Reflector.getMethodNames(new Stack<String>()));
+	//assertEquals(___, Reflector.getMethodNames(new BigDecimal(0)));
+	}
+}

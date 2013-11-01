@@ -1,0 +1,38 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+public class A_AboutGenericsBasics {
+
+	class SmallHouse{
+		private Object visitor;  
+		public void enter(Object visitor){
+			this.visitor = visitor;
+		}
+		public Object exit(){
+			Object last_visitor = visitor;
+			visitor = null;
+			return last_visitor;
+		}
+	}
+	
+	class Human{}
+	
+	class Dog{}
+	
+	@Test
+	@SuppressWarnings("unused")
+	public void a_____think_about_situations_when_class_has_meaning_in_context_of_another_class(){
+		// we can write dangerous code which blows up runtime
+		SmallHouse house = new SmallHouse();
+		house.enter(new Human());
+        Human who_was_in_house = (Human) house.exit();   // everything ok so far
+        house.enter(new Dog());
+        who_was_in_house = (Human) house.exit();         // it compiles well!
+        assertTrue("I've got that SmallHouse need metaknowledge for it's use", false);
+	}
+
+}

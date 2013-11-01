@@ -17,13 +17,13 @@ public class A_AboutAnnotationsBasics {
 	}
 	
 	@RedMagnet
-	Object SomeData;
+	Object someData;
 	
 	@RedMagnet
 	@Test
 	@SuppressWarnings("unused")
 	public void a_____in_the_very_basics_annotation_is_just_a_metadata_marker() {
-		@RedMagnet Object SomeData;
+		@RedMagnet Object otherData;
 		assertEquals(___, RedMagnet.class.getSimpleName());
 		assertEquals(___, this.getClass().getAnnotations().length);
 	}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.droidbrew.javakoans.eagkoans&apos; to &apos;4_AboutGenerics/src&apos;&#x0D;&#x0A;- Original project: &apos;2_AboutEnums&apos;&#x0D;&#x0A;- Destination element: &apos;4_AboutGenerics/src&apos;&#x0D;&#x0A;- Original element: &apos;2_AboutEnums/src/com.droidbrew.javakoans.eagkoans&apos;" description="Copy package" destination="=4_AboutGenerics/src" element1="/src&lt;com.droidbrew.javakoans.eagkoans" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1383221895260" version="1.0"/>
+</session>

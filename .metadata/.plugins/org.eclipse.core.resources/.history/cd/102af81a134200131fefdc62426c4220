@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+class Laptop{
+	@BasicSpec
+	@ExtendedSpec
+	String CPUBrand;
+	
+	@BasicSpec
+	@ExtendedSpec
+	String CPUModel;
+	
+	@ExtendedSpec
+	float weight;
+	
+	@Variation
+	String color;
+}
+
+public class D_AboutIdiomaticNames {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

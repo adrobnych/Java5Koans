@@ -1,0 +1,49 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.fail;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import org.junit.Test;
+
+@Retention(RetentionPolicy.RUNTIME)
+@interface Auto {
+	int numberOfWheels() default 4;
+	String slangName() default "Can";
+	String[] passangerNames() default {};
+}
+
+@Auto
+class Vaz2110{
+	int numberOfWheels;
+
+	public Vaz2110() {
+		this.numberOfWheels =
+			this.getClass().getAnnotation(Auto.class).numberOfWheels();
+	}
+	
+	public Vaz2110(int numberOfWheels) {
+		this.numberOfWheels = numberOfWheels;
+	}
+
+	public int getNumberOfWheels() {
+		return numberOfWheels;
+	}
+
+	public void setNumberOfWheels(int numberOfWheels) {
+		this.numberOfWheels = numberOfWheels;
+	}
+	
+}
+
+
+
+public class C_AboutCustomAnnotations {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,29 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+
+import org.junit.Test;
+
+
+
+inteface Vehicle{
+	feelGasTank();
+}
+
+
+
+public class C_AboutGenericsBoundTypes {
+	@Test
+	public void a_____we_can_allow_multytype_parameters_for_generic_method(){
+		assertEquals(___, Reflector.getMethodNames(new Animal()));
+		assertEquals(___, Reflector.getMethodNames(new Stack<String>()));
+		assertEquals(___, Reflector.getMethodNames(new BigDecimal(0)));
+	}
+}

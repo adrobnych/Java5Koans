@@ -1,0 +1,14 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class C_AboutCustomAnnotations {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
