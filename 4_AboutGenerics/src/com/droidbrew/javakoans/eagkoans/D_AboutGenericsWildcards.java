@@ -1,6 +1,8 @@
 package com.droidbrew.javakoans.eagkoans;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
 
 // imagine we're in place of client code using generic class 
 // and we want to work with many generic variations

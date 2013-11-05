@@ -1,0 +1,22 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import org.junit.Test;
+import javax.servlet.http;
+
+
+public class E_AboutIdiomaticGenerics {
+	
+	static class NoWarn {
+		public static Map<String, String[]> getParameterMap(ServletRequest r) 
+		{
+			@SuppressWarnings("unchecked")
+			Map<String, String[]> result = r.getParameterMap();
+			return result;
+		}
+	}
+	
+	@Test
+	public void a_____prefer_generics_in_new_code_and_reduce_suppressing_unchecked(){
+		
+	}
+}

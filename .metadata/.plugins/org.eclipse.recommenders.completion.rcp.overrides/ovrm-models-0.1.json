@@ -3,5 +3,15 @@
     "coordinate": "jre:jre:zip:ovrm:1.0.0",
     "location": "C:\\Program Files\\Java\\jre7\\lib\\rt.jar",
     "status": "RESOLVED"
+  },
+  "C:\\dev\\EAG_katas\\3_AboutAnnotations\\src": {
+    "location": "C:\\dev\\EAG_katas\\3_AboutAnnotations\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\dev\\EAG_katas\\3_AboutAnnotations\\src\u0027. Skipped."
+  },
+  "C:\\dev\\EAG_katas\\4_AboutGenerics\\src": {
+    "location": "C:\\dev\\EAG_katas\\4_AboutGenerics\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\dev\\EAG_katas\\4_AboutGenerics\\src\u0027. Skipped."
   }
 }

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="C_AboutCustomAnnotations.c_____annotation_can_inject_dependencies" project="3_AboutAnnotations" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testcase name="c_____annotation_can_inject_dependencies" classname="com.droidbrew.javakoans.eagkoans.C_AboutCustomAnnotations" time="0.004"/>
-</testrun>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;D_AboutGenericsWildcards.java&apos; to &apos;4_AboutGenerics/src/com.droidbrew.javakoans.eagkoans&apos;&#x0D;&#x0A;- Original project: &apos;4_AboutGenerics&apos;&#x0D;&#x0A;- Destination element: &apos;4_AboutGenerics/src/com.droidbrew.javakoans.eagkoans&apos;&#x0D;&#x0A;- Original element: &apos;com.droidbrew.javakoans.eagkoans.D_AboutGenericsWildcards.java&apos;" description="Copy compilation unit" destination="/src&lt;com.droidbrew.javakoans.eagkoans" element1="/src&lt;com.droidbrew.javakoans.eagkoans{D_AboutGenericsWildcards.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1383594187114" units="1" version="1.0"/>
+</session>
