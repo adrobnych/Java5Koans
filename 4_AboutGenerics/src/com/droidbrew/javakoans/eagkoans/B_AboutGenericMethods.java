@@ -1,39 +1,31 @@
 package com.droidbrew.javakoans.eagkoans;
 
-import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import static com.droidbrew.javakoans.eagkoans.base.Koan.___;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
-import static com.droidbrew.javakoans.eagkoans.base.Koan.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 
-class Reflector{
-	public static <T> List<String> getMethodNames(T investigatedObject){
-		List<String> result = new LinkedList<>();
-		for(Method m : investigatedObject.getClass().getDeclaredMethods()){
-			result.add(m.getName());
-		}
+class Compositor{
+	// Generic method
+	public static <E> Set<E> unite(Set<E> s1, Set<E> s2) {
+		Set<E> result = new HashSet<E>(s1);
+		result.addAll(s2);
 		return result;
 	}
 }
 
-class Animal{
-	public void eat(){}
-	public void makeAnotherAnimal(){}
-}
-
 public class B_AboutGenericMethods {
 	@Test
-	public void a_____we_can_allow_multytype_parameters_for_generic_method(){
-		assertEquals(___, Reflector.getMethodNames(new Animal()));
-		assertEquals(___, Reflector.getMethodNames(new Stack<String>()));
-		assertEquals(___, Reflector.getMethodNames(new BigDecimal(0)));
+	public void a_____no_casts_needed_for_generic_method(){
+		Set<String> developers = new HashSet<String>(
+				Arrays.asList("Tom", "Dick", "Harry"));
+		Set<String> qa = new HashSet<String>(
+				Arrays.asList("Larry", "Moe", "Curly"));
+		Set<String> team = Compositor.unite(developers, qa);
+		assertEquals(___, team);
 	}
 }
-
-// Meditate on question: how we can call declared methods of T inside generic methods and classes? 
-// What if we will need some specific behavior of T, U etc...

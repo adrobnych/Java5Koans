@@ -56,7 +56,7 @@ public class A_AboutGenericsBasics {
 	@Test
 	@SuppressWarnings("unused")
 	public void b_____generics_allow_embedd_such_a_context_into_code(){
-		// we can write dangerous code which blows up runtime
+	
 		SmallHouseJava5Style<Human> house = new SmallHouseJava5Style<>(); // look at "Diamond" for Java 7 
 		house.enter(new Human());
         Human who_was_in_house = house.exit();   // no cast needed!

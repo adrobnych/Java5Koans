@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
@@ -66,14 +67,19 @@ public class B_AboutAnnotationsForCompiler {
 		}
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
 	public void d_____allows_painless_migrations(){
-		Integer[] data = {1, 2, 3};
+		List oldList = new ArrayList();
+		oldList.add(12); oldList.add(123);
+		
+		List<Integer> newList = new LinkedList<>();
+		newList.add(34); newList.add(1234);
 		
 		assertEquals("It's still working for legacy client code",
-				___, APIModel.consolidateOldWay(Arrays.asList(data)));
-		assertEquals("It's still working for legacy client code",
-				___, APIModel.consolidateNewWay(Arrays.asList(data)));
+				___, APIModel.consolidateOldWay(oldList));
+		assertEquals(".. and for modern client code",
+				___, APIModel.consolidateNewWay(newList));
 	}
 	
 }

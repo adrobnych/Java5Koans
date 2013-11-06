@@ -34,11 +34,11 @@ class Car implements Vehicle{
 	}
 }
 
-class GasStationVersion1{
+class GasStationVersion1{  // wrong implementation
 	public <T> String fill(T vehicle){
 		String result = "";
 		result += "I'm going to serve " + vehicle.toString();  // Look we can call Object's methods
-		// result += " " + vehicle.fillTank();   but we can't call specific declared methods of vehicle
+		// result += " " + vehicle.fillTank();   // but we can't call specific declared methods of vehicle
 		return result;
 	}
 }
@@ -55,7 +55,7 @@ public class C_AboutGenericsBoundTypes {
 		assertEquals(___, new GasStationVersion1().fill(100));
 	}
 	
-	class GasStationVersion2{
+	class GasStationVersion2{  // right implementation
 		public <T extends Vehicle> String fill(T vehicle){
 			String result = "";
 			result += "I'm going to serve " + vehicle.toString();
