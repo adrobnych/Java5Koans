@@ -35,10 +35,15 @@ class Car implements Vehicle{
 }
 
 class GasStationVersion1<T>{  // wrong implementation
+	
+	private T dock = null;
+	
 	public String fill(T vehicle){
 		String result = "";
 		result += "I'm going to serve " + vehicle.toString();  // Look we can call Object's methods
+		dock = vehicle;
 		// result += " " + vehicle.fillTank();   // but we can't call specific declared methods of vehicle
+		dock = null;
 		return result;
 	}
 }
@@ -47,16 +52,16 @@ class GasStationVersion1<T>{  // wrong implementation
 public class C_AboutGenericsBoundTypes {
 	@Test
 	public void a_____generics_without_bounding_are_crosstype_but_blind_to_specific_methods(){
-		assertEquals(___, new GasStationVersion1<Car>().fill(new Car("Ford")));
+		assertEquals(___, new GasStationVersion1().fill(new Car("Ford")));
 	}
 	
 	@Test
 	public void b_____generics_without_bounding_has_no_defence_from_stuppid_use(){
-		assertEquals(___, new GasStationVersion1<Integer>().fill(100));
+		assertEquals(___, new GasStationVersion1().fill(100));
 	}
 	
-	class GasStationVersion2<T extends Vehicle>{  // right implementation
-		public String fill(T vehicle){
+	class GasStationVersion2{  // right implementation
+		public <T extends Vehicle> String fill(T vehicle){
 			String result = "";
 			result += "I'm going to serve " + vehicle.toString();
 			result += " " + vehicle.fillTank();
@@ -66,12 +71,12 @@ public class C_AboutGenericsBoundTypes {
 
 	@Test
 	public void c_____generics_with_bounding_have_reduced_crosstyping_but_see_specific_methods(){
-		assertEquals(___, new GasStationVersion2<Vehicle>().fill(new Car("Ford")));
+		assertEquals(___, new GasStationVersion2().fill(new Car("Ford")));
 	}
 	
 	@Test
 	public void d_____generics_with_bounding_do_has_defence_from_stuppid_use(){
-		// assertEquals(___, new GasStationVersion2<Integer>().fill(100)); 
+		// assertEquals(___, new GasStationVersion2().fill(100)); 
 		// implement Vehicle in couple ways and play with fill method
 	}
 }

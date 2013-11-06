@@ -35,10 +35,15 @@ class Car implements Vehicle{
 }
 
 class GasStationVersion1<T>{  // wrong implementation
+	
+	private T dock = null;
+	
 	public String fill(T vehicle){
 		String result = "";
 		result += "I'm going to serve " + vehicle.toString();  // Look we can call Object's methods
+		dock = vehicle;
 		// result += " " + vehicle.fillTank();   // but we can't call specific declared methods of vehicle
+		dock = null;
 		return result;
 	}
 }

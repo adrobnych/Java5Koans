@@ -163,9 +163,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "22f0e0ed90483f5a39b355e378d10cb3c462eefa",
-    "jarFileModificationDate": "2012-08-27T13:57:51.485+03:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\jfr.jar",
+    "jarFileFingerprint": "b69221416bfdc8e7b4e331bcc43a930ded279a66",
+    "jarFileModificationDate": "2012-08-27T13:57:51.283+03:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\jaccess.jar",
     "javaRuntime": true
   },
   {
@@ -176,9 +176,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "b69221416bfdc8e7b4e331bcc43a930ded279a66",
-    "jarFileModificationDate": "2012-08-27T13:57:51.283+03:00",
-    "location": "C:\\Program Files\\Java\\jre7\\lib\\ext\\jaccess.jar",
+    "jarFileFingerprint": "22f0e0ed90483f5a39b355e378d10cb3c462eefa",
+    "jarFileModificationDate": "2012-08-27T13:57:51.485+03:00",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\jfr.jar",
     "javaRuntime": true
   },
   {
