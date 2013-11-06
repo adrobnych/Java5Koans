@@ -19,7 +19,7 @@ public class AboutKoans {
 
 	@Test
 	public void c_____koan_can_declare_problem(){
-		assertTrue("how to fix assertTrue when 1st argument is false", false);
+		assertTrue("how to fix assertTrue when 2nd argument is false", false);
 	}
 	
 	@Test 

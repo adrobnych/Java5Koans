@@ -68,7 +68,7 @@ enum ExtendedOperation implements Operation {
 public class G_AboutExtendableEnum {
 
 	@Test
-	public void a_____using_an_EnumMap_to_associate_data_with_an_enum() {
+	public void a_____extending_enum_using_interface() {
 		
 		double x = 2;
 		double y = 3;

@@ -1,0 +1,87 @@
+package com.droidbrew.javakoans.eagkoans;
+
+import static com.droidbrew.javakoans.eagkoans.base.Koan.___;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+
+public class E_AboutIdiomaticGenerics {
+	
+	// Fake Implementation of old library
+	class ServletRequest{
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		public Map getParameterMap() {
+			Map data = new HashMap();
+			data.put("car_brands", new String[]{"audi", "volvo"});
+			return data;
+		}
+		
+	}
+	
+	static class NoWarn {
+		public static Map<String, String[]> getParameterMap(ServletRequest r) 
+		{
+			// look how to get minimal code affection by @SuppressWarnings on declaration command
+			@SuppressWarnings("unchecked") Map<String, String[]> result = r.getParameterMap();
+			return result;
+		}
+	}
+	
+	@Test
+	public void a_____prefer_generics_in_new_code_and_reduce_suppressing(){
+		assertEquals(___, NoWarn.getParameterMap(new ServletRequest()).get("car_brands")[0]);
+	}
+	
+	@Test
+	public void b_____prefer_lists_to_arrays(){
+		// Arrays are covariant but generics are invariant
+		
+		// Fails at runtime!
+		Object[] objectArray = new Long[1];
+		objectArray[0] = "I don't fit in"; // Throws ArrayStoreException - run the test and see
+		
+		// Won't compile! Uncomment the following lines
+		// List<Object> ol = new ArrayList<Long>(); // Incompatible types
+		// ol.add("I don't fit in");
+		
+	}
+	
+	class ClassCracker<T>{
+		public String whichClass(){
+			return this.getClass().getSimpleName();
+		}
+	}
+	
+	@Test
+	public void c_____prefer_lists_to_arrays_2(){
+		// Arrays are refied, generics implemented by erasure for compatibility with legacy code
+		assertEquals(___, (new Integer[100]).getClass().getSimpleName());
+		assertEquals(___, (new ClassCracker<Integer>()).whichClass());
+	}
+	
+	
+	// Returns the maximum value in a list - uses recursive type parameter
+	public static <T extends Comparable<T>> T max(List<T> list) {
+		Iterator<T> i = list.iterator();
+		T result = i.next();
+		while (i.hasNext()) {
+			T t = i.next();
+			if (t.compareTo(result) > 0)
+				result = t;
+		}
+		return result;
+	}
+	
+	@Test
+	public void d_____complex_case_with_recursive_parameter(){
+		List<Integer> l = new ArrayList<>();
+		l.add(10); l.add(1); l.add(101);
+		assertEquals(___, max(l));
+	}
+}
